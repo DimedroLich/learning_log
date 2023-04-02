@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Learning log мать его ети</h1>
-    <p>Отслеживает трекинг обучения хуё моё</p>
-</body>
-</html>
+{% extends 'learning_logs/base.html' %}
+
+    {% block title %}
+        Learning log main
+     {% endblock %}
+
+    {% block content %}
+        <h1>Страница лога обучения</h1>
+        <p>Помогает отслеживать прогресс в обучении</p>
+    {% endblock %}
