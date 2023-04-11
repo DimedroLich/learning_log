@@ -9,7 +9,7 @@
         <h2>Все имеющиеся темы</h2>
         <ul>
         {% for topic in topics %}
-           <li>{{topic}} / {{topic.date_added}}</li>
+           <li><a href="{{ topic.get_url }}">{{topic}} / {{topic.date_added}}</a></li>
             {% empty %}
             <li>Пока тем добавлено не было</li>
         {% endfor %}

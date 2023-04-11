@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import Topic, Entry
 
 
@@ -10,6 +10,13 @@ def index(request):
 
 def topics(request):
     context = {
-        'topics' : Topic.objects.order_by('date_added'),
+        'topics': Topic.objects.order_by('date_added'),
     }
     return render(request, 'learning_logs/topics.html', context=context)
+
+
+def topic(request, topic_id):
+    topic = Topic.objects.get(id=topic_id)
+    entries = topic.entry_set.order_by('-date_added')
+    context = {'topic': topic, 'entries': entries}
+    return render(request, 'learning_logs/topic.html', context=context)

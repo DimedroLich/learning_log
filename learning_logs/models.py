@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 # Create your models here.
 class Topic(models.Model):
@@ -10,6 +10,8 @@ class Topic(models.Model):
     def __str__(self):
         return self.text
 
+    def get_url(self):
+        return reverse("topic",args=[self.id])
 
 class Entry(models.Model):
     """Информация изученная пользователем по теме"""
