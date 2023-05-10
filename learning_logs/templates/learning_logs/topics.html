@@ -13,5 +13,8 @@
             {% empty %}
             <li>Пока тем добавлено не было</li>
         {% endfor %}
+
         </ul>
+        <p><hr></p>
+        <a href="{% url 'new_topic' %}">Добавить тему</a>
   {% endblock %}

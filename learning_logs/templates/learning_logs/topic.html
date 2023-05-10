@@ -7,17 +7,21 @@
     {% block content %}
 
     <p>Topic: {{ topic }}</p>
-    <p>Entries: </p>
+    <a href="{% url 'new_entry' topic.id  %}">Добавить статью по теме</a>
+    <p>Статьи: </p>
 
     <ul>
         {% for entry in entries %}
         <li>
             <p>{{ entry.date_added|date:'d M , Y. H:i' }}</p>
+
             <p>{{ entry.text|linebreaks }}</p>
+            <a href="{% url 'edit_entry' entry.id %}">Редактировать статью</a>
         </li>
     {% empty %}
         <li>There are no entries for this topic yet.</li>
-
      {% endfor %}
     </ul>
+    <p><hr></p>
+
     {% endblock content %}

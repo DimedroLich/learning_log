@@ -1,0 +1,16 @@
+{% extends 'learning_logs/base.html' %}
+
+    {% block title %}
+        Страница добавления нового сообщения
+     {% endblock %}
+
+    {% block content %}
+        <h1>Страница добавления сообщения к теме</h1>
+<form action="" method="post">
+      {% csrf_token %}
+        Введите сообление по теме: <a href="{{topic.get_url}}">{{topic}}</a> для добавления в базу
+        {{form.as_p}}
+    <button type="submit">Отправить</button>
+</form>
+
+    {% endblock %}

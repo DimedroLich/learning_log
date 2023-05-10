@@ -1,0 +1,16 @@
+{% extends 'learning_logs/base.html' %}
+
+    {% block title %}
+        Страница добавления новой темы
+     {% endblock %}
+
+    {% block content %}
+        <h1>Страница добавления темы через форму</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
+
+
+    {% endblock %}
